@@ -5,8 +5,14 @@ export default function VR({ VRImage }) {
     <div>
       <a-scene embedded>
         <a-sky src={VRImage}></a-sky>
-        <a-entity camera look-controls wasd-controls></a-entity>
+        <a-entity 
+          camera 
+          look-controls 
+          wasd-controls 
+          position="0 1.6 -5"
+        ></a-entity>
       </a-scene>
     </div>
   );
 }
+

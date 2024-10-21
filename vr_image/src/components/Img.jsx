@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { storage } from '/firebase'; // Adjust the path as necessary
+import { storage } from '/firebase'; 
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import VR from './VR';
 
@@ -18,21 +18,32 @@ export default function Img() {
   }
 
   return (
-    <div>
-      <label htmlFor="imageInput">Input Panoramic Image</label>
+    <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md">
+      <label 
+        htmlFor="imageInput" 
+        className="mb-2 text-lg font-semibold text-gray-700"
+      >
+        Input Panoramic Image
+      </label>
       <input
         type="file"
         accept="image/*"
-        onChange={handleImage} 
+        onChange={handleImage}
         id="imageInput"
         name="img"
+        className="mb-4 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       {VRImage && (
-        <div>
-          <img src={VRImage} alt="Uploaded" style={{ maxWidth: '100%' }} />
+        <div className="flex flex-col items-center">
+          <img 
+            src={VRImage} 
+            alt="Uploaded" 
+            className="max-w-full h-auto rounded-md shadow-md mb-4"
+          />
           <VR VRImage={VRImage} />
         </div>
       )}
     </div>
   );
+  
 }

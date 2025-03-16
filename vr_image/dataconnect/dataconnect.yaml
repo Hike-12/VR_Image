@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "vrimage"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "vrimage-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

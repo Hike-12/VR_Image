@@ -1,6 +1,6 @@
 [
     {
-      "origin": ["*"],
+      "origin": ["https://hike-12.github.io"],
       "method": ["GET", "POST", "PUT", "DELETE", "OPTIONS","HEAD"],
       "maxAgeSeconds": 3600
     }

@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://Hike-12.github.io/vr_image",
-
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
@@ -14,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "aframe": "^1.6.0",
     "aframe-react": "^4.4.0",
     "firebase": "^10.14.1",

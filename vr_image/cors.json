@@ -1,8 +1,8 @@
 [
-    {
-      "origin": ["https://hike-12.github.io"],
-      "method": ["GET", "POST", "PUT", "DELETE", "OPTIONS","HEAD"],
-      "maxAgeSeconds": 3600
-    }
-  ]
-  
+  {
+    "origin": ["https://hike-12.github.io", "http://localhost:5173/VR_Image"],
+    "method": ["GET", "PUT", "POST", "DELETE", "OPTIONS", "HEAD"],
+    "maxAgeSeconds": 3600,
+    "responseHeader": ["Content-Type", "Authorization", "Content-Length", "User-Agent", "x-requested-with", "Access-Control-Allow-Origin"]
+  }
+]

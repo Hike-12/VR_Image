@@ -29,7 +29,6 @@ export default function Img() {
       setApiError('');
       
       // Get API key and log its presence (not the actual key)
-      // const API_KEY = "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";
       const API_KEY = import.meta.env.VITE_HUGGINGFACE_API_KEY;
       console.log("API Key present:", !!API_KEY);
       

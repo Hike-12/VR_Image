@@ -81,7 +81,6 @@ export default function Img() {
 
   return (
     <>
-    <h1>Habibi</h1>
     <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md">
       <div className="w-full mb-4">
         <label 

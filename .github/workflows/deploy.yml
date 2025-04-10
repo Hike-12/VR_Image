@@ -10,38 +10,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # Upgraded from v2 to v4
+
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4  # Upgraded from v1 to v4
         with:
-          node-version: 16
+          node-version: 20  # Recommended LTS version
+
       - name: Install dependencies
         run: npm install
         working-directory: ./vr_image
+
       - name: Build project
         env:
           VITE_HUGGINGFACE_API_KEY: ${{ secrets.VITE_HUGGINGFACE_API_KEY }}
         run: npm run build
         working-directory: ./vr_image
-      - name: Upload production-ready build files
+
+      - name: Upload production files
         uses: actions/upload-artifact@v4
         with:
           name: production-files
           path: ./vr_image/dist
+
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: ./dist
+          path: ./vr_image/dist  # Matches build job's upload path
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true  # Creates a fresh gh-pages branch each time
+          publish_dir: ./vr_image/dist  # Path to your built files
+          force_orphan: true  # Clean gh-pages branch every time

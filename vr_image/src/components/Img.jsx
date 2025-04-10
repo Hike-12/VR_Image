@@ -80,12 +80,14 @@ export default function Img() {
   }
 
   return (
+    <>
+    <h1>Habibi</h1>
     <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md">
       <div className="w-full mb-4">
         <label 
           htmlFor="imageInput" 
           className="mb-2 text-lg font-semibold text-gray-700"
-        >
+          >
           Input Panoramic Image
         </label>
         <input
@@ -119,7 +121,7 @@ export default function Img() {
             onClick={generateImage}
             disabled={isGenerating || !prompt.trim()}
             className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md disabled:bg-gray-400"
-          >
+            >
             {isGenerating ? 'Generating...' : 'Generate Image'}
           </button>
           {isGenerating && (
@@ -141,10 +143,11 @@ export default function Img() {
             src={VRImage} 
             alt="VR Scene" 
             className="max-w-full h-auto rounded-md shadow-md mb-4"
-          />
+            />
           <VR VRImage={VRImage} />
         </div>
       )}
     </div>
+    </>
   );
 }

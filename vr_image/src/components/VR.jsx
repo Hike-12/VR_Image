@@ -3,7 +3,8 @@ import React, { useEffect, useRef } from 'react';
 export default function VR({ VRImage }) {
   return (
     <div>
-      <a-scene embedded>
+      <a-scene embedded
+      vr-mode-ui="enabled: true">
         <a-sky src={VRImage}></a-sky>
         <a-entity 
           camera 

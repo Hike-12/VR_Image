@@ -39,7 +39,7 @@ export default function VR({ VRImage }) {
   return (
     <div>
       <a-scene embedded
-      vr-mode-ui="enabled: true">
+      vr-mode-ui="enabled: false">
         <a-sky src={VRImage} rotation="0 -130 0"></a-sky>
         <a-entity 
           camera 

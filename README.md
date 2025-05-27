@@ -50,6 +50,7 @@ Visit the live application: [VR Image Generator](https://your-username.github.io
     VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
     VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
     VITE_FIREBASE_APP_ID=your_app_id
+    VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
     ```
 
 4. **Configure Firebase**
@@ -102,7 +103,6 @@ Visit the live application: [VR Image Generator](https://your-username.github.io
 ### VR Experience
 - Click "View in VR" to enter the immersive experience
 - **Mouse Controls**: Drag to look around
-- **WASD Controls**: Move through the scene
 - **Mobile**: Touch and drag to navigate
 - **Exit**: Use the "Exit VR View" button to return
 

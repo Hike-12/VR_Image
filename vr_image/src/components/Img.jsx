@@ -22,11 +22,9 @@ export default function Img() {
         const storageRef = ref(storage, `images/${file.name}`);
         await uploadBytes(storageRef, file);
         const url = await getDownloadURL(storageRef);
-        console.log("Uploaded image URL:", url);
         setVRImage(url);
         toast.success("Image uploaded successfully!");
       } catch (error) {
-        console.error("Upload error:", error);
         toast.error(`Upload failed: ${error.message}`);
       }
     }
@@ -41,7 +39,6 @@ export default function Img() {
       
       // Get API key and log its presence (not the actual key)
       const API_KEY = import.meta.env.VITE_HUGGINGFACE_API_KEY;
-      console.log("API Key present:", !!API_KEY);
       
       if (!API_KEY) {
         throw new Error("API key is missing. Check your .env file.");
@@ -51,8 +48,6 @@ export default function Img() {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${API_KEY}`
       };
-      
-      console.log("Request headers set:", Object.keys(headers));
       
       const response = await fetch(
         "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
@@ -65,11 +60,8 @@ export default function Img() {
         }
       );
       
-      console.log("Response status:", response.status);
-      
       if (!response.ok) {
         const errorText = await response.text();
-        console.error("API error response:", errorText);
         throw new Error(`API error (${response.status}): ${response.statusText}`);
       }
       
@@ -83,7 +75,6 @@ export default function Img() {
       setVRImage(url);
       toast.success("Image generated successfully!");
     } catch (error) {
-      console.error("Error:", error);
       setApiError(error.message);
       toast.error(`Failed to generate image: ${error.message}`);
     } finally {
@@ -113,7 +104,6 @@ export default function Img() {
         setVRImage(url);
         toast.success("Image uploaded successfully!");
       } catch (error) {
-        console.error("Upload error:", error);
         toast.error(`Upload failed: ${error.message}`);
       }
     }

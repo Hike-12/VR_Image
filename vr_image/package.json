@@ -17,7 +17,7 @@
     "aframe": "^1.6.0",
     "aframe-react": "^4.4.0",
     "firebase": "^10.14.1",
-    "framer-motion": "^12.6.3",
+    "framer-motion": "^12.23.12",
     "react": "^18.3.1",
     "react-aframe": "^1.0.0",
     "react-dom": "^18.3.1",

@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
-    "aframe": "^1.6.0",
+    "aframe": "^1.7.1",
     "aframe-react": "^4.4.0",
     "firebase": "^10.14.1",
     "framer-motion": "^12.6.3",
